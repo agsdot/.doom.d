@@ -49,8 +49,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! seoul256-theme)
-(package! zygospore)
+(package! ace-jump-mode)
 (package! buffer-move)
+(package! magit-rockstar)
 (package! prettier-js)
+(package! seoul256-theme)
 (package! web-beautify)
+(package! zygospore)

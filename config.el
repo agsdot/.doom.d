@@ -26,10 +26,9 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
-(setq doom-theme 'doom-material)
-(setq doom-theme 'doom-tomorrow-night)
+;; (setq doom-theme 'doom-material)
+;; (setq doom-theme 'doom-tomorrow-night)
 (setq doom-theme 'seoul256)
-
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -38,7 +37,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -60,6 +58,14 @@
 ;;
 ;;
 (setq confirm-kill-emacs nil)
+
+;; http://stackoverflow.com/questions/34531831/highlighting-trailing-whitespace-in-emacs-without-changing-character
+(setq-default show-trailing-whitespace t)
+(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-display-mappings
+  '((space-mark 32 [183] [46])
+    (tab-mark 9 [9655 9] [92 9])))
+
 ;; http://evgeni.io/posts/reversable-ex-only-command/
 (use-package! zygospore
   :commands zygospore-toggle-delete-other-windows
@@ -70,6 +76,8 @@
   (evil-ex-define-cmd "only" 'zygospore-toggle-delete-other-windows))
 
 (use-package! buffer-move)
+
+(use-package! ace-jump-mode)
 
 ;; https://github.com/yasuyk/web-beautify
 ;; js-beautify installed by typing: npm -g install js-beautify
@@ -103,3 +111,18 @@
   (mark-whole-buffer)
   (goto-char (point-min))
   (while (search-forward "\n" nil t) (replace-match "" nil t)))
+
+;; for use in M-x
+(defalias 'aj 'ace-jump-mode)
+
+(defalias 'gst 'magit-status)
+(defalias 'st 'magit-status)
+
+(defalias 'nf 'neotree-find)
+(defalias 'nt 'neotree-toggle)
+
+(defalias 'w 'evil-write)
+(defalias 'wq 'evil-save-and-close)
+(defalias 'wq! 'evil-save-and-close)
+(defalias 'q 'evil-quit)
+(defalias 'q! 'evil-quit)
