@@ -19,10 +19,18 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend
+       ;;company           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
+       ;;ivy               ; a search engine for love and life
+
+       ;; https://github.com/zaiste/.doom.d/blob/master/init.el
+       (company          ; the ultimate code completion backend
+        +tng
+        +auto            ; as-you-type code completion
+        +childframe)     ; a nicer company UI. Emacs +26 only!
+       (ivy
+        +fuzzy); a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
