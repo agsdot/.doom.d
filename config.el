@@ -89,6 +89,10 @@
   (add-hook 'js2-mode-hook
     (lambda () (setq js2-basic-offset 2))))
 
+(after! evil
+  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
+  (define-key evil-motion-state-map "k" 'evil-previous-visual-line))
+
 ;; prettier installed by typing: npm -g install prettier
 (when (executable-find "prettier")
   (use-package! prettier-js)
