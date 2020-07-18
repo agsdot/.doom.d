@@ -130,3 +130,37 @@
 (defalias 'wq! 'evil-save-and-close)
 (defalias 'q 'evil-quit)
 (defalias 'q! 'evil-quit)
+
+
+;; https://www.reddit.com/r/emacs/comments/hsb0ma/my_own_stupid_spacemacs_clone/
+;; https://lccambiaghi.github.io/.doom.d/readme.html
+(general-auto-unbind-keys)
+(map! :leader
+      :desc "M-x"                   :n "SPC" #'counsel-M-x
+      :desc "ivy resume" :n ":" #'ivy-resume
+      :desc "Async shell command"   :n "!"   #'async-shell-command
+      :desc "Toggle eshell"         :n "'"   #'+eshell/toggle
+      :desc "Open dir in iTerm" :n "oi" #'+macos/open-in-iterm
+      :desc "Neotree toggle" :n "nt" #'neotree-toggle
+      :desc "Neotree find" :n "nf" #'neotree-find
+
+      (:desc "windows" :prefix "w"
+        :desc "popup raise" :n "p" #'+popup/raise)
+
+      (:desc "project" :prefix "p"
+        :desc "Eshell"               :n "'" #'projectile-run-eshell
+        :desc "Terminal" :n "t" #'projectile-run-vterm ))
+
+;; https://lccambiaghi.github.io/.doom.d/readme.html
+(setq-default
+ uniquify-buffer-name-style 'forward              ; Uniquify buffer names
+ window-combination-resize t                      ; take new window space from all other windows (not just current)
+ x-stretch-cursor t)                              ; Stretch cursor to the glyph width
+
+(setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
+      evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
+      ;; auto-save-default t                         ; Nobody likes to loose work, I certainly don't
+      inhibit-compacting-font-caches t)           ; When there are lots of glyphs, keep them in memory
+
+(delete-selection-mode 1)                         ; Replace selection when inserting text
+;; (global-subword-mode 1)                           ; Iterate through CamelCase words
