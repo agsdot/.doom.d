@@ -93,6 +93,10 @@
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line))
 
+(after! evil-escape
+  (setq-default evil-escape-key-sequence "kj"))
+
+
 ;; prettier installed by typing: npm -g install prettier
 (when (executable-find "prettier")
   (use-package! prettier-js)
@@ -143,6 +147,7 @@
       :desc "Open dir in iTerm" :n "oi" #'+macos/open-in-iterm
       :desc "Neotree toggle" :n "nt" #'neotree-toggle
       :desc "Neotree find" :n "nf" #'neotree-find
+      :desc "ace-jump-mode" :n "aj" #'ace-jump-mode
 
       (:desc "windows" :prefix "w"
         :desc "popup raise" :n "p" #'+popup/raise)
