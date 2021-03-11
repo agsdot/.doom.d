@@ -5,3 +5,5 @@ Circle back to these to optimize this .doom.d setup
   - referenced https://github.com/zzamboni/dot-doom 
 - https://www.reddit.com/r/emacs/comments/ipd24k/anybody_willing_to_share_their_orgroam_workflow/
   - https://github.com/sunnyhasija/DOOMEmacs
+- https://github.com/mfiano/doom-config/blob/master/%2Bbindings.el
+  - local leader key bindings

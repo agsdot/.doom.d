@@ -38,6 +38,8 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       (emoji +unicode)  ; 🙂
+
        ;;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
@@ -86,10 +88,10 @@
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       ;;spell             ; tasing you for misspelling mispelling
+       spell               ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
-       :os 
+       :os
        macos             ; MacOS-specific commands
 
        :tools
@@ -152,7 +154,7 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        ;;org               ; organize your plain life in plain text
-       (org +roam)
+       ;;(org +roam)
 
        php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more

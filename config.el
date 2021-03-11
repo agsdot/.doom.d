@@ -73,6 +73,7 @@
   ;; :config
   ;; for use in counsel-M-x / smex
   (defalias 'only 'zygospore-toggle-delete-other-windows)
+  ;;(defalias 'only 'zygospore-toggle-delete-other-windows))
   (evil-ex-define-cmd "only" 'zygospore-toggle-delete-other-windows))
 
 (use-package! buffer-move)
@@ -169,3 +170,13 @@
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 ;; (global-subword-mode 1)                           ; Iterate through CamelCase words
+
+
+;; (setq doom-font (font-spec :family "JetBrains Mono" :size 24)
+;;       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
+;;       doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
+;;       doom-serif-font (font-spec :family "IBM Plex Mono" :weight 'light))
+
+;;(setq doom-font (font-spec :family "Attribute Mono" :size 20))
+;;(unless (find-font doom-font)
+;;  (setq doom-font (font-spec :family "FuraCode Nerd Font" :size 20)))
