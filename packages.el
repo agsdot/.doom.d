@@ -51,6 +51,7 @@
 
 (package! ace-jump-mode)
 (package! buffer-move)
+(package! evil-expat)
 (package! magit-rockstar)
 (package! prettier-js)
 (package! seoul256-theme)

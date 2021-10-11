@@ -91,6 +91,7 @@
     (lambda () (setq js2-basic-offset 2))))
 
 (after! evil
+  (use-package! evil-expat)
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line))
 
