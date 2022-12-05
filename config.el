@@ -1,3 +1,4 @@
+;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -143,7 +144,11 @@
 (general-auto-unbind-keys)
 (map! :leader
       :desc "M-x"                   :n "SPC" #'counsel-M-x
+      ;; https://macowners.club/posts/from-ivy-to-vertico/
+      ;; :desc "M-x"                   :n "SPC" #'execute-extended-command
       :desc "ivy resume" :n ":" #'ivy-resume
+      ;; https://www.reddit.com/r/emacs/comments/qkgnhe/is_there_an_embarkconsultvertico_equivalent_to/
+      ;;:desc "vertico-repeat" :n ":" #'vertico-repeat
       :desc "Async shell command"   :n "!"   #'async-shell-command
       :desc "Toggle eshell"         :n "'"   #'+eshell/toggle
       :desc "Open dir in iTerm" :n "oi" #'+macos/open-in-iterm
@@ -151,18 +156,18 @@
       :desc "Neotree find" :n "nf" #'neotree-find
       :desc "ace-jump-mode" :n "aj" #'ace-jump-mode
 
-      (:desc "windows" :prefix "w"
-        :desc "popup raise" :n "p" #'+popup/raise)
+      ;;(:desc "windows" :prefix "w"
+      ;;  :desc "popup raise" :n "p" #'+popup/raise)
 
       (:desc "project" :prefix "p"
         :desc "Eshell"               :n "'" #'projectile-run-eshell
         :desc "Terminal" :n "t" #'projectile-run-vterm ))
 
 ;; https://lccambiaghi.github.io/.doom.d/readme.html
-(setq-default
- uniquify-buffer-name-style 'forward              ; Uniquify buffer names
- window-combination-resize t                      ; take new window space from all other windows (not just current)
- x-stretch-cursor t)                              ; Stretch cursor to the glyph width
+;;(setq-default
+;; uniquify-buffer-name-style 'forward              ; Uniquify buffer names
+;; window-combination-resize t                      ; take new window space from all other windows (not just current)
+;; x-stretch-cursor t)                              ; Stretch cursor to the glyph width
 
 (setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
       evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
@@ -181,3 +186,17 @@
 ;;(setq doom-font (font-spec :family "Attribute Mono" :size 20))
 ;;(unless (find-font doom-font)
 ;;  (setq doom-font (font-spec :family "FuraCode Nerd Font" :size 20)))
+;; https://gist.github.com/jordangarrison/8720cf98126a1a64890b2f18c1bc69f5
+(use-package! python-black
+  :demand t
+  :after python
+  :config
+  (add-hook! 'python-mode-hook #'python-black-on-save-mode)
+)
+
+;;(use-package! vertico
+;;  (vertico-multiform-mode)
+;;  (setq vertico-cycle t)
+;;  (setq vertico-multiform-categories
+;;        '((imenu buffer)
+;;          (consult-grep buffer))))

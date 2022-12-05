@@ -24,21 +24,28 @@
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
 
+       company             ; the ultimate code completion backend
        ;; https://github.com/zaiste/.doom.d/blob/master/init.el
-       (company          ; the ultimate code completion backend
-        +tng
-        +auto            ; as-you-type code completion
-        +childframe)     ; a nicer company UI. Emacs +26 only!
+       ;; (company          ; the ultimate code completion backend
+       ;;  +tng
+       ;;  +auto            ; as-you-type code completion
+       ;;  +childframe)     ; a nicer company UI. Emacs +26 only!
        (ivy
         +fuzzy); a search engine for love and life
+       ;; (vertico +icons)              ; the search engine of the future
+       ;; https://www.reddit.com/r/DoomEmacs/comments/shp6ez/why_uniquify_does_not_work_with_vertico/
+       ;; https://github.com/minad/vertico
+       ;; https://docs.doomemacs.org/latest/modules/completion/vertico/
+       ;; https://macowners.club/posts/from-ivy-to-vertico/
+       ;; https://github.com/bdarcus/.doom.d
 
        :ui
-       ligatures       ; ligatures or substitute text with pretty symbols
+       ;;ligatures       ; ligatures or substitute text with pretty symbols
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       (emoji +unicode)  ; 🙂
+       ;; (emoji +unicode)  ; 🙂
 
        ;;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
@@ -93,6 +100,7 @@
 
        :os
        macos             ; MacOS-specific commands
+       tty               ; improve the terminal Emacs experience
 
        :tools
        ;;ansible
@@ -135,7 +143,7 @@
        ;;fsharp           ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       ;;(go +lsp)         ; the hipster dialect
+       (go +lsp)         ; the hipster dialect
        ;;(haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;

@@ -50,10 +50,12 @@
 ;(unpin! t)
 
 (package! ace-jump-mode)
+(package! amx)
 (package! buffer-move)
 (package! evil-expat)
 (package! magit-rockstar)
 (package! prettier-js)
+(package! python-black)
 (package! seoul256-theme)
 (package! web-beautify)
 (package! zygospore)
