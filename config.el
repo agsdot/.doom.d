@@ -173,6 +173,12 @@
 ;; (global-subword-mode 1)                           ; Iterate through CamelCase words
 
 
+(use-package! python-black
+  :demand t
+  :after python
+  :config
+  (add-hook! 'python-mode-hook #'python-black-on-save-mode)
+)
 ;; (setq doom-font (font-spec :family "JetBrains Mono" :size 24)
 ;;       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
 ;;       doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
