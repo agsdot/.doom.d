@@ -52,6 +52,7 @@
 (package! ace-jump-mode)
 (package! buffer-move)
 (package! evil-expat)
+(package! evil-matchit)
 (package! magit-rockstar)
 (package! prettier-js)
 (package! python-black)

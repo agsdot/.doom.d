@@ -179,6 +179,13 @@
   :config
   (add-hook! 'python-mode-hook #'python-black-on-save-mode)
 )
+
+(use-package! evil-matchit
+  :demand t
+  :config
+  (global-evil-matchit-mode 1)
+)
+
 ;; (setq doom-font (font-spec :family "JetBrains Mono" :size 24)
 ;;       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
 ;;       doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
