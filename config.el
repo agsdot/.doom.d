@@ -228,3 +228,7 @@
 ;;(setq doom-font (font-spec :family "Attribute Mono" :size 20))
 ;;(unless (find-font doom-font)
 ;;  (setq doom-font (font-spec :family "FuraCode Nerd Font" :size 20)))
+
+(after! vertico
+  (setq completion-styles '(orderless)
+        orderless-matching-styles '(orderless-flex)))
