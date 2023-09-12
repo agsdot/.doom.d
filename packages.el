@@ -57,5 +57,8 @@
 (package! prettier-js)
 (package! python-black)
 (package! seoul256-theme)
+(package! string-inflection)
 (package! web-beautify)
 (package! zygospore)
+
+

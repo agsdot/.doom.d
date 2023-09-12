@@ -232,3 +232,16 @@
 (after! vertico
   (setq completion-styles '(orderless)
         orderless-matching-styles '(orderless-flex)))
+
+(set-face-attribute 'default nil :height 140)
+
+;; Set the default Emacs frame size
+(setq default-frame-alist
+      '((width  . 160)  ; character
+        (height . 48))) ; lines
+
+;; Set default position
+(add-to-list 'default-frame-alist '(left . 0))
+(add-to-list 'default-frame-alist '(top . 0))
+
+(menu-bar-mode -1)
