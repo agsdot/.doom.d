@@ -123,11 +123,19 @@
 (when (executable-find "prettier")
   (use-package! prettier-js)
   (setq prettier-js-width-mode nil)
-  (setq prettier-js-args '("--single-quote" "--bracket-spacing"))
+  ;;(setq prettier-js-args '("--single-quote" "--bracket-spacing"))
+  (setq prettier-js-args '("--bracket-spacing"))
   (add-hook 'js-mode-hook 'prettier-js-mode)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
-  ;; https://superuser.com/questions/684352/add-keybinding-to-js-mode-javascript-mode-in-emacs
-  ;; js-mode loads js.el file, so eval-after-load 'js to bind to js-mode-map
+  (add-hook 'typescript-mode-hook 'prettier-js-mode)
+  
+  (add-hook 'web-mode-hook  ;; for TSX files
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (prettier-js-mode)
+                (add-hook 'before-save-hook 'prettier-js nil 'make-it-local))))
+
+  ;; Custom keybinding for manual formatting
   (eval-after-load 'js
     '(define-key js-mode-map (kbd "C-c j") 'prettier-js))
   (eval-after-load 'js2-mode
@@ -245,3 +253,6 @@
 (add-to-list 'default-frame-alist '(top . 0))
 
 (menu-bar-mode -1)
+
+(when (display-graphic-p)
+  (add-hook 'after-init-hook 'minimap-mode))
