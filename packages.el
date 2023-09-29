@@ -50,9 +50,11 @@
 ;(unpin! t)
 
 (package! ace-jump-mode)
+(package! all-the-icons)
 (package! buffer-move)
 (package! evil-expat)
 (package! evil-matchit)
+;;(package! keycast)
 (package! magit-rockstar)
 (package! prettier-js)
 (package! python-black)

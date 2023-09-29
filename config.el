@@ -215,12 +215,20 @@
 ;; (global-subword-mode 1)                           ; Iterate through CamelCase words
 
 
-(use-package! python-black
-  :demand t
-  :after python
-  :config
-  (add-hook! 'python-mode-hook #'python-black-on-save-mode)
-)
+ (use-package! python-black
+   :demand t
+   :after python
+   :config
+   (add-hook! 'python-mode-hook #'python-black-on-save-mode)
+ )
+
+;; Enable python-mode for Black
+;;(after! python
+;;  (setq python-black-on-save-mode t))
+
+;; Set Black path
+(setq python-black-executable "black")
+
 
 (use-package! evil-matchit
   :demand t
@@ -255,4 +263,10 @@
 (menu-bar-mode -1)
 
 (when (display-graphic-p)
+  (use-package! all-the-icons
+    :config
+    ;;(setq all-the-icons-font-family "Material Icons")
+    (unless (member "all-the-icons" (font-family-list))
+      (all-the-icons-install-fonts t)))
+
   (add-hook 'after-init-hook 'minimap-mode))
