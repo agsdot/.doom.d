@@ -50,8 +50,9 @@
 ;(unpin! t)
 
 (package! ace-jump-mode)
-(package! all-the-icons)
+;;(package! all-the-icons)
 (package! buffer-move)
+;;(package! codeium :recipe (:host github :repo "Exafunction/codeium.el"))
 (package! evil-expat)
 (package! evil-matchit)
 ;;(package! keycast)

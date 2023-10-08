@@ -263,10 +263,10 @@
 (menu-bar-mode -1)
 
 (when (display-graphic-p)
-  (use-package! all-the-icons
-    :config
-    ;;(setq all-the-icons-font-family "Material Icons")
-    (unless (member "all-the-icons" (font-family-list))
-      (all-the-icons-install-fonts t)))
+  ;;(use-package! all-the-icons
+  ;;  :config
+  ;;  ;;(setq all-the-icons-font-family "Material Icons")
+  ;;  (unless (member "all-the-icons" (font-family-list))
+  ;;    (all-the-icons-install-fonts t)))
 
   (add-hook 'after-init-hook 'minimap-mode))
