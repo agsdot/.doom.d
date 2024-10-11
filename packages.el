@@ -63,5 +63,6 @@
 (package! string-inflection)
 (package! web-beautify)
 (package! zygospore)
-
-
+;;https://github.com/akicho8/string-inflection
+(package! evil-string-inflection)
+;;(package! casual-dired)
