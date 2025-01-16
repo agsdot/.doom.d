@@ -66,3 +66,9 @@
 ;;https://github.com/akicho8/string-inflection
 (package! evil-string-inflection)
 ;;(package! casual-dired)
+;;
+(package! copilot-chat
+  :recipe (:host github :repo "chep/copilot-chat.el" :files ("*.el")))
+
+
+(package! magit-delta)

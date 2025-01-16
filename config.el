@@ -265,6 +265,18 @@
 
 (menu-bar-mode -1)
 
+(use-package! copilot-chat
+  :after (request shell-maker)
+  :custom
+  (copilot-chat-frontend 'shell-maker)
+  :config
+  (require 'copilot-chat-shell-maker)
+  (push '(shell-maker . copilot-chat-shell-maker-init) copilot-chat-frontend-list)
+  (copilot-chat-shell-maker-init))
+
+(use-package! magit-delta
+  :hook (magit-mode . magit-delta-mode))
+
 ;;(use-package! casual-dired
 ;;  :ensure t
 ;;  :bind (:map dired-mode-map ("C-o" . 'casual-dired-tmenu)))
