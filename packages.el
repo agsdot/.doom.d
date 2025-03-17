@@ -72,3 +72,5 @@
 
 
 (package! magit-delta)
+(package! catppuccin-theme)
+

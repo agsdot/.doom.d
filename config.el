@@ -32,9 +32,12 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'seoul256)
+;;(setq doom-theme 'seoul256)
 ;;(setq doom-theme 'doom-moonlight)
 ;;(setq doom-theme 'doom-nord)
+(setq doom-theme 'catppuccin)
+(setq catppuccin-flavor 'latte)
+;;(setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -277,6 +280,8 @@
 (use-package! magit-delta
   :hook (magit-mode . magit-delta-mode))
 
+(setq projectile-globally-ignored-directories '(".git" "node_modules" "venv" ".venv" ".cache"))
+
 ;;(use-package! casual-dired
 ;;  :ensure t
 ;;  :bind (:map dired-mode-map ("C-o" . 'casual-dired-tmenu)))
@@ -353,3 +358,5 @@
 ;;            (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (point))))
 ;;    (setq codeium/document/text 'my-codeium/document/text)
 ;;    (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset))
+
+
